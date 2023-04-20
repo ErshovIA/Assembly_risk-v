@@ -6,7 +6,7 @@ executable_name=find_minimal_row_sum.elf
 default: $(dump_name) $(executable_name)
 
 %.elf : %.c
-	@riscv64-unknown-elf-gcc -march=rv32i -mabi=ilp32 $< -o $@
+	@riscv64-unknown-elf-gcc -march=rv32i -O3 -mabi=ilp32 $< -o $@
 
 %.dump: %.elf
 	@riscv64-unknown-elf-objdump -D $< > $@
